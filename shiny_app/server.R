@@ -25,12 +25,13 @@ server <- function(input, output) {
       pull(naam_from)
   })
 
-  # Plot using the df() reactive element
+  # Plot using the df() reactive
   output$stations_kaart <- renderLeaflet({
     leaflet() %>%
       addProviderTiles(providers$Stamen.TonerLite,
                        options = providerTileOptions(noWrap = TRUE)
       ) %>%
-      addAwesomeMarkers(data = stations(), icon = makeAwesomeIcon(icon = 'no-icon', markerColor = ~color), label=~naam_lang)
+      addAwesomeMarkers(data = stations(), icon = makeAwesomeIcon(icon = 'no-icon', markerColor = ~color), label=~naam_lang) %>%
+      setView(5.6, 52.3, zoom = 7)
   })
 }

@@ -1,7 +1,7 @@
 ui <- dashboardPage(
   dashboardHeader(),
   dashboardSidebar(
-    selectInput("steden", "Selecteer een stad:", choices=levels(stations_raw$naam_lang), multiple=TRUE,
+    selectInput("steden", "Selecteer steden:", choices=levels(stations_raw$naam_lang), multiple=TRUE,
                 selected=c("Amsterdam Centraal", "Eindhoven")),
     sliderInput("max_reistijd", "Maximale reistijd (min.)", min=0, max=300, value=60)
   ),

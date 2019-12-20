@@ -1,5 +1,7 @@
 settings.py
 *.json
+*rsconnect*
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
